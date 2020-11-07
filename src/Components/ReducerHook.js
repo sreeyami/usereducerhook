@@ -1,11 +1,13 @@
 import React, { useReducer } from "react";
 
 function ReducerHook() {
+  //fist we need to create Initial State
   const initialState = {
     val1: 8,
     val2: 12,
     val3: 15
   };
+  // Second we need to create a function 
   const reducer = (state, action) => {
     switch (action) {
       case "increment":
@@ -27,8 +29,9 @@ function ReducerHook() {
         return state;
     }
   };
-
+// step 3: passing initial state and function to useReducer() method
   const [intVal, dispatch] = useReducer(reducer, initialState);
+
   console.log(intVal);
   return (
     <div>
